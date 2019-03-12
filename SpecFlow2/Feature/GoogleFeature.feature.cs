@@ -17,8 +17,7 @@ namespace SpecFlow2.Feature
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("GoogleSearch")]
+    [TechTalk.SpecRun.FeatureAttribute("GoogleSearch", Description="Feature to search Google search functionality", SourceFile="Feature\\GoogleFeature.feature", SourceLine=0)]
     public partial class GoogleSearchFeature
     {
         
@@ -27,7 +26,7 @@ namespace SpecFlow2.Feature
 #line 1 "GoogleFeature.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace SpecFlow2.Feature
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -56,7 +54,6 @@ namespace SpecFlow2.Feature
         public virtual void ScenarioInitialize(TechTalk.SpecFlow.ScenarioInfo scenarioInfo)
         {
             testRunner.OnScenarioInitialize(scenarioInfo);
-            testRunner.ScenarioContext.ScenarioContainer.RegisterInstanceAs<NUnit.Framework.TestContext>(NUnit.Framework.TestContext.CurrentContext);
         }
         
         public virtual void ScenarioStart()
@@ -69,9 +66,8 @@ namespace SpecFlow2.Feature
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Google Search for Execute Automation")]
-        [NUnit.Framework.CategoryAttribute("SmokeTest")]
+        [TechTalk.SpecRun.ScenarioAttribute("Google Search for Execute Automation", new string[] {
+                "SmokeTest"}, SourceLine=4)]
         public virtual void GoogleSearchForExecuteAutomation()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Google Search for Execute Automation", null, new string[] {
@@ -99,6 +95,12 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("I should see the result for keyword", ((string)(null)), table2, "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
